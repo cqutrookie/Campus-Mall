@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOVERPLAN</title>
+    <link rel="stylesheet" href="/LoverPlan/webpages/mainpage/css/planform.css">
+    <link rel="icon" href="/LoverPlan/static/img/slideshare.png">
+
+</head>
+
+
+
+<body>
+
+    <div  class="basic-grey">
+        <h1>LOVEPLAN
+            <span>请完整填写存钱计划表单</span>
+        </h1>
+        <label>
+            <span>选择计划类型 :</span>
+            <select id="template" name="themplate" οnchange="changeStyle();">
+                <option value="1">周计划</option>
+                <option value="2">月计划</option>
+                <option value="3">年计划</option>
+                <option value="4">自定义（随意存取）</option>
+            </select>
+        </label>
+        <label>
+            <span>发起人姓名 :</span>
+            <input id="planer" type="text" name="port" placeholder="填写真实姓名" />
+        </label>
+        <label>
+            <span>计划名称 :</span>
+            <input id="planname" type="text" name="port" placeholder="请输入计划名称" />
+        </label>
+        <label>
+            <span>计划所需金额</span>
+            <input id="planmoney" type="email" name="email" placeholder="输入数字即可（单位人名币）" />
+        </label>
+        <label>
+            <span>附加信息</span>
+            <textarea id="planmessage" name="message" placeholder="填写附加信息"></textarea>
+        </label>
+        <label>
+            <span>是否邀请伴侣</span><select name="selection" id="planproperties">
+            <option value="0">YES</option>
+            <option value="1">NO</option>
+        </select>
+        </label>
+
+        <label>
+            <span>&nbsp;</span>
+            <input type="button" class="button" value="发起计划" onclick="submitplan()"/>
+        </label>
+    </div>
+    <script type="text/javascript" src="../login/js/axios.min.js"></script>
+    <script type="text/javascript" src="js/planform.js"></script>
+    <script type="text/javascript" src="/LoverPlan/static/js/jquery-1.8.2.min.js"></script>
+
+</body>

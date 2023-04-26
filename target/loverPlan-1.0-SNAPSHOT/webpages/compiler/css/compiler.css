@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #1F2023;
+}
+#menu {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    color: #0c0c01;
+    display: inline-block;
+    line-height: 58px;
+    position: absolute;
+    padding: 20 40px;
+    font-family:"仿宋";
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+    padding-left: 140px;
+}
+
+ul li {
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(13, 6, 6);
+    display: block;
+    padding: 0 20px;
+    white-space: nowrap;
+    font-family:"仿宋";
+    font-weight: bold;
+}
+.file{
+
+}
+a:hover {
+    color: #FFF;
+    background-color: #333333;
+}
+
+ul li ul li {
+    float: none;
+    margin-top: 2px;
+    background-color: mintcream;
+}
+
+ul li ul li a:hover {
+    color: #FFF;
+    background-color: #333333;
+}
+
+ul li ul {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    display: none;
+    padding-left: 0;
+}
+
+ul li:hover ul {
+    display: block;
+}
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+#left_div {
+    height: 100%;
+    width: 30px;
+    float: left;
+}
+#left_txt {
+    height: 100%;
+    width: 100%;
+    resize: none;
+    background-color: #1F2023;
+    color: #767676;
+    border: 0;
+    overflow: hidden;
+    padding: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 24px;
+    font-size: 15px;
+}
+
+#left_1{
+    height: 100%;
+    width: 30px;
+    resize: none;
+    background-color: #1F2023;
+    color: #767676;
+    border: 0;
+    overflow: hidden;
+    padding: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 24px;
+    font-size: 15px;
+}
+
+#left_2{
+    height: 100%;
+    width: 30px;
+    resize: none;
+    background-color: #1F2023;
+    color: #767676;
+    border: 0;
+    overflow: hidden;
+    padding: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 24px;
+    font-size: 15px;
+}
+#input{
+    height: 100vh;
+    width: calc(100% - 30px);
+    resize: none;
+    background-color : black;
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    padding: 10px 15px;
+    line-height: 24px;
+    font-size: 15px;
+    overflow-x: auto;
+    float: left;
+    cursor: default;
+}
+
+#input1{
+    height: 57.8vh;
+    width: calc(100% - 30px);
+    resize: none;
+    background-color: #333333;
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    padding: 10px 15px;
+    line-height: 24px;
+    font-size: 15px;
+    overflow-x: auto;
+    float: left;
+    cursor: default;
+}
+
+#input2{
+    height: 40vh;
+    width: calc(100% - 30px);
+    resize: none;
+    background: #1F2023;
+    color: chartreuse;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    padding: 10px 15px;
+    line-height: 24px;
+    font-size: 15px;
+    overflow-x: auto;
+    float: left;
+    cursor: default;
+}
+#outtext {
+    width: 50%;
+    height: 60%;
+    background-color: #333333;
+    float: left;
+    overflow-x: auto;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    line-height: 24px;
+    font-size: 15px;
+}
+#cons{
+    width: 50%;
+    height: 40%;
+    background-color: #1F2023;
+    float: left;
+    overflow-x: auto;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    line-height: 24px;
+    font-size: 15px;
+}
+#l_div {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #767676;
+}

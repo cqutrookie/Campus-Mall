@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="/LoverPlan/webpages/mainpage/css/allbook.css">
+    <link rel="icon" href="/LoverPlan/static/img/slideshare.png">
+
+
+
+</head>
+<body>
+
+<div id="usermessage"><a href="#">欢迎您，某某某</a></div>
+<h1>图书列表</h1>
+<table id="allBooks">
+    <thead>
+    <tr>
+        <th>图书名字</th>
+        <th>图书信息</th>
+        <th>剩余数量</th>
+        <th>借阅金额</th>
+        <th>图书类型</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="plans">
+
+    </tbody>
+</table>
+<div style="text-align: center" id="pagefunction">
+    <span><h3  onclick="changepage()" id="first">首页</h3></span>
+    <span><h3  onclick="changepage1()" id="first1">上一页</h3></span>
+    <span id="pagenumber"></span>
+    <span><h3  onclick="changepage3()">下一页</h3></span>
+</div>
+
+
+
+</body>
+
+<script type="text/javascript" src="js/allbook.js"></script>
+<script type="text/javascript" src="/LoverPlan/static/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../login/js/axios.min.js"></script>
+</html>

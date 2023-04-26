@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="webpages/compiler/css/compiler.css">
+</head>
+<body>
+<div id="menu">
+    <div class="logo">
+        <p style="font-size: 20px;">&#128213;&nbsp;XxCompiler</p>
+    </div>
+    <ul >
+        <li><a href="#">文件</a>
+            <ul>
+                <li><a href="#" id="fileopen" onclick="fileopen()">打开</a></li>
+                <li><a href="#">未开发</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="Wordanalysis()">词法分析</a>
+            <ul>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+            </ul>
+        </li>
+        <li><a href="#">未开发</a>
+            <ul>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+            </ul>
+        </li>
+        <li><a href="#">未开发</a>
+            <ul>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+            </ul>
+        </li>
+        <li><a href="#">未开发</a>
+            <ul>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+                <li><a href="#">未开发</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div id="l_div">
+    <div id="left_div">
+        <textarea id="left_txt" disabled>1</textarea>
+    </div>
+    <textarea id="input" wrap="off" oninput="mInput()" onclick="getSel()" onscroll="triggerScroll()"></textarea>
+</div>
+<div id="outtext">
+    <textarea id="left_1" disabled>1</textarea>
+    <textarea id="input1" wrap="off" oninput="mInput1()" onclick="getSel1()" onscroll="triggerScroll1()"></textarea>
+</div>
+<div id="cons">
+    <textarea id="left_2" disabled>1</textarea>
+    <textarea id="input2" wrap="off" oninput="mInput2()" onclick="getSel2()" onscroll="triggerScroll2()"></textarea>
+</div>
+</body>
+<script type="text/javascript" src="webpages/compiler/js/compiler.js"></script>
+<script type="text/javascript" src="/LoverPlan/static/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="webpages/login/js/axios.min.js"></script>
+</html>
+

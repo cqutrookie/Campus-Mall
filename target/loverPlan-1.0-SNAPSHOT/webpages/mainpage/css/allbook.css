@@ -1,0 +1,98 @@
+body {
+    background-image: url(/Content/z4.jpg);
+    background-size: cover;
+}
+table {
+    margin-top: 30px;
+    font-family: STKaiti;
+    border-collapse: collapse;
+    border: 1px dashed white;
+    margin-left: 15%;
+}
+#usermessage{
+    height: 20px;
+    width: 100px;
+    background-color: grey;
+}
+table tbody {
+    display: block;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+
+table thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+table tr td:nth-child(9) {
+    background-color:white;
+}
+h1 {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 15px;
+    color: gray;
+    font-family: STKaiti;
+}
+#all-requst {
+    margin-top: 30px;
+    font-family: STKaiti;
+}
+
+table tr:nth-child(even) {
+    background-color: grey;
+}
+table tr:nth-child(odd) {
+    background-color: orange;
+}
+table th:nth-child(even) {
+    background-color: grey;
+}
+
+table th:nth-child(odd) {
+    background-color: orange;
+}
+
+table, thead, tbody {
+    width: 1200px;
+}
+
+th {
+    color: white;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    border-radius:5px;
+}
+tr, td {
+    border: 1px dotted white;
+    height: 80px;
+    text-align: center;
+}
+
+tbody {
+    font-size: 1em;
+    padding: 20px;
+}
+table tr:hover {
+    background-color: #CCDDFF;
+}
+
+
+
+h3:hover {
+    cursor: pointer;
+    transform: scaleY(1.1)
+}
+#pagefunction{
+    width: 100%;
+}
+h3{
+    display: inline;
+    margin-left: 8px;
+}
