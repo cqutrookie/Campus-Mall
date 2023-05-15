@@ -1,6 +1,6 @@
 
 
 function gotoLogin(){
-   window.location.href = '/LoverPlan/login';
+   window.location.href = '/Campus-Mall/login';
 }
 

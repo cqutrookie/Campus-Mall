@@ -33,7 +33,7 @@
     <mvc:annotation-driven/>
 
 <!--    配置试图控制器-->
-    <mvc:view-controller path="/" view-name="/compiler/compiler"></mvc:view-controller>
+    <mvc:view-controller path="/" view-name="/login/index"></mvc:view-controller>
 
 <!--    配置文件上传解析器-->
     <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
