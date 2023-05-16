@@ -49,7 +49,15 @@ public class UserLoginController {
         String Code = userService.checkUser(username,password);
         //存入用户id
         httpSession.setAttribute("userid",Code);
-        result.put("CODE",Code);
+        if(Code == "00")
+        {
+            result.put("CODE","0");
+        }
+        else
+        {
+            result.put("CODE","1");
+        }
+
         //获取用户权限
         String userAccess = userService.checkAccess(username,password);
         result.put("access",userAccess);
