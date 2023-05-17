@@ -1,19 +1,16 @@
 package com.lxyup.Login.pojo;
 
+import java.util.Date;
+
 public class User {
     private String id;
     private String username;
     private String password;
-    private int access;
+    private int money;
+    private Date registertime;
+    private String name;
 
-    public User(String id, String username, String password, int access) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.access = access;
-    }
-
-    public String  getId() {
+    public String getId() {
         return id;
     }
 
@@ -37,12 +34,40 @@ public class User {
         this.password = password;
     }
 
-    public int getAccess() {
-        return access;
+
+
+    public int getMoney() {
+        return money;
     }
 
-    public void setAccess(int access) {
-        this.access = access;
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public Date getRegistertime() {
+        return registertime;
+    }
+
+    public void setRegistertime(Date registertime) {
+        this.registertime = registertime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public User(String id, String username, String password,  int money, Date registertime, String name) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+
+        this.money = money;
+        this.registertime = registertime;
+        this.name = name;
     }
 
     public User(){

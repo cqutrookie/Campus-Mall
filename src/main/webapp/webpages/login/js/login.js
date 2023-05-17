@@ -1,5 +1,5 @@
 var USERNAME_FAULT = "00";
-var USERNAME_RIGHT = "01";
+var USERNAME_RIGHT = "200";
 
 function checkUser(){
     let data = {};

@@ -7,4 +7,8 @@ public interface UserLoginMapper {
 
     public String checkAccess(String username,String password);
 
+    public String checkUsername(String username);
+
+    public void register (User user);
+
 }

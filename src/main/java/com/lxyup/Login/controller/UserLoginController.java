@@ -57,13 +57,22 @@ public class UserLoginController {
         {
             result.put("CODE","1");
         }
-
-        //获取用户权限
-        String userAccess = userService.checkAccess(username,password);
-        result.put("access",userAccess);
-        System.out.println(userAccess);
         return result;
     }
 
+    /**
+     * 用户注册
+     */
+    @RequestMapping("/register")
+    @ResponseBody
+    public Map<String,Object> register(HttpServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String name = request.getParameter("name");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String CODE = userService.register(name,username,password);
+        result.put("CODE",CODE);
+        return result;
+    }
 
 }

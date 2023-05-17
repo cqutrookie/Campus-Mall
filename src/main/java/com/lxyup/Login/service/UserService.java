@@ -31,4 +31,12 @@ public interface UserService {
      */
     public String checkAccess(String username,String password);
 
+    /**
+     * 用户注册
+     * @param username
+     * @param password
+     * @return
+     */
+     public String register(String name ,String username,String password);
+
 }

@@ -3,10 +3,14 @@
 <mapper namespace="com.lxyup.Login.mapper.UserLoginMapper" >
     <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
     <select id="checkUser" resultType="java.lang.String">
-        select t.id from sysuser t where t.username = #{arg0} and t.password = #{arg1}
+        select t.id from sysusers t where t.username = #{arg0} and t.password = #{arg1}
     </select>
 
-    <select id="checkAccess" resultType="java.lang.String">
-        select t.access from sysuser t where t.username = #{arg0} and t.password = #{arg1}
+    <select id="checkUsername" resultType="java.lang.String">
+        select t.id from sysusers t where t.username = #{arg0}
     </select>
+
+    <insert id="register">
+        INSERT into sysusers VALUES (null, #{username},#{password},#{name},#{registertime},#{money})
+    </insert>
 </mapper>
