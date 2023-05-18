@@ -39,4 +39,11 @@ public interface UserService {
      */
      public String register(String name ,String username,String password);
 
+
+    /**
+     * 获取用户昵称
+     * @param username
+     * @return
+     */
+     public String getname (String username);
 }

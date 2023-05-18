@@ -13,4 +13,8 @@
     <insert id="register">
         INSERT into sysusers VALUES (null, #{username},#{password},#{name},#{registertime},#{money})
     </insert>
+
+    <select id="getname" resultType="java.lang.String">
+        select t.name from sysusers t where t.username = #{arg0}
+    </select>
 </mapper>

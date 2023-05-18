@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lxyup.SaveMoney.mapper.GetBookMapper;
 import com.lxyup.SaveMoney.pojo.Book;
+import com.lxyup.SaveMoney.pojo.Commodity;
 import com.lxyup.SaveMoney.service.GetBookService;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +32,17 @@ public class GetBookImpl implements GetBookService {
         PageInfo<Book> page = new PageInfo<Book>(list, 5);
         return page;
         }
+
+    @Override
+    public ArrayList<Commodity> getAllCommodity() {
+        ArrayList<Commodity> commodities = getPlanMapper.getAllCommodity();
+        return commodities;
     }
+
+    @Override
+    public ArrayList<Commodity> getSerch(String commodityname) {
+        ArrayList<Commodity> commodities = new ArrayList<>();
+        commodities = getPlanMapper.getSearch(commodityname);
+        return commodities;
+    }
+}

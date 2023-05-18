@@ -5,4 +5,9 @@
     <select id="insertPlan">
         INSERT into plan VALUES (null,#{planmessage},#{planpromoterid},#{planmoney},#{planproperties},#{planname},#{plantype},#{planstarttime},#{planendtime},#{planstatu},#{planer},0)
     </select>
+
+    <select id="insertcart">
+        INSERT into shoppingcart VALUES (null,#{subscriberid},#{commodityid},#{merchantid})
+    </select>
+
 </mapper>

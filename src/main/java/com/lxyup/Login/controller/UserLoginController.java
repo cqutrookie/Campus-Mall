@@ -51,10 +51,15 @@ public class UserLoginController {
         httpSession.setAttribute("userid",Code);
         if(Code == "00")
         {
+
             result.put("CODE","0");
         }
         else
         {
+            //获取用户名和id 返回
+            String name = userService.getname(username);
+            result.put("userid",Code);
+            result.put("name",name);
             result.put("CODE","1");
         }
         return result;

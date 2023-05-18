@@ -54,4 +54,10 @@ public class UserServiceImpl implements UserService {
             return "01";
         }
     }
+
+    @Override
+    public String getname(String username) {
+        String name = userLoginMapper.getname(username);
+        return name;
+    }
 }

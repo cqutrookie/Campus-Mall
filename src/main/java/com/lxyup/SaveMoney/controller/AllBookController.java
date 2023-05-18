@@ -3,6 +3,7 @@ package com.lxyup.SaveMoney.controller;
 import com.github.pagehelper.PageInfo;
 import com.lxyup.Login.pojo.User;
 import com.lxyup.SaveMoney.pojo.Book;
+import com.lxyup.SaveMoney.pojo.Commodity;
 import com.lxyup.SaveMoney.service.GetBookService;
 import com.lxyup.SaveMoney.service.GetUserService;
 import jflex.anttask.JFlexTask;
@@ -76,6 +77,63 @@ public class AllBookController {
         User user = getUserService.getUserMes(userid);
         return user;
     }
+
+    /**
+     * 获取全部商品信息
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getcommodities")
+    @ResponseBody
+    public Map<String,Object> getCommodity(HttpServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        try{
+            //返回全部商品信息
+            ArrayList<Commodity> commodities = getPlanService.getAllCommodity();
+            result.put("commodities",commodities);
+            result.put("CODE","200");
+
+        }
+        catch(Exception e){
+            //异常获取
+            e.printStackTrace();
+            result.put("CODE","201");
+        }
+
+
+        return result;
+    }
+
+    /**
+     * 搜索框功能
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getsearch")
+    @ResponseBody
+    public Map<String,Object> getserch(HttpServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String commodityname = request.getParameter("commodityname");
+
+        try{
+            //返回查询到的商品信息
+            String name = '%'+commodityname+'%';
+            ArrayList<Commodity> commodities = getPlanService.getSerch(name);
+            result.put("commodities",commodities);
+            result.put("CODE","200");
+
+        }
+        catch(Exception e){
+            //异常获取
+            e.printStackTrace();
+            result.put("CODE","201");
+        }
+
+
+        return result;
+    }
+
+
 }
 
 

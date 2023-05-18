@@ -11,4 +11,6 @@ public interface UserLoginMapper {
 
     public void register (User user);
 
+    public String getname(String username);
+
 }

@@ -9,4 +9,24 @@
     <select id="getBookById" resultType="com.lxyup.SaveMoney.pojo.Book">
         select * from book b where b.bookid = #{bookid}
     </select>
+
+    <select id="getAllCommodity" resultType="map">
+        select * from commoditys
+    </select>
+
+    <select id="getSearch" resultType="map">
+        select * from commoditys c where c.commodityname like #{arg0}
+    </select>
+
+    <select id="getCommoditiesId" resultType="java.lang.Integer">
+        select s.commodityid from shoppingcart s where s.subscriberid = #{arg0}
+    </select>
+
+    <select id="getShoppingCartById" resultType="com.lxyup.SaveMoney.pojo.ShoppingCart">
+        select * from shoppingcart s where s.subscriberid = #{arg0}
+    </select>
+
+    <select id="getCommodityById" resultType="com.lxyup.SaveMoney.pojo.Commodity">
+        select * from commoditys c where c.commodityid = #{arg0}
+    </select>
 </mapper>

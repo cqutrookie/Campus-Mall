@@ -2,6 +2,7 @@ package com.lxyup.SaveMoney.service;
 
 import com.github.pagehelper.PageInfo;
 import com.lxyup.SaveMoney.pojo.Book;
+import com.lxyup.SaveMoney.pojo.Commodity;
 
 import java.util.ArrayList;
 
@@ -17,4 +18,14 @@ public interface GetBookService {
      */
     public PageInfo<Book> getBookPage(Integer pageNum);
 
+    /**
+     * 获取全部商品信息
+     */
+    public ArrayList<Commodity> getAllCommodity();
+
+    /**
+     * 搜索框功能
+     */
+    public ArrayList<Commodity> getSerch(String commodityname);
 }
+
