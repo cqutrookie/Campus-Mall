@@ -17,19 +17,19 @@ public class GetBookImpl implements GetBookService {
     @Resource
     private GetBookMapper getPlanMapper;
     @Override
-    public ArrayList<Book> getAllBook() {
-        ArrayList<Book> planList = getPlanMapper.getBook();
+    public ArrayList<Commodity> getAllBook() {
+        ArrayList<Commodity> planList = getPlanMapper.getBook();
         return planList;
     }
 
     @Override
-    public PageInfo<Book> getBookPage(Integer pageNum) {
+    public PageInfo<Commodity> getBookPage(Integer pageNum) {
         //开启分页功能
-        PageHelper.startPage(pageNum, 7);
+        PageHelper.startPage(pageNum, 8);
 
-        List<Book> list = getPlanMapper.getBook();
+        List<Commodity> list = getPlanMapper.getBook();
         //获取分页相关数据
-        PageInfo<Book> page = new PageInfo<Book>(list, 5);
+        PageInfo<Commodity> page = new PageInfo<Commodity>(list, 5);
         return page;
         }
 
@@ -40,9 +40,15 @@ public class GetBookImpl implements GetBookService {
     }
 
     @Override
-    public ArrayList<Commodity> getSerch(String commodityname) {
-        ArrayList<Commodity> commodities = new ArrayList<>();
-        commodities = getPlanMapper.getSearch(commodityname);
-        return commodities;
+    public PageInfo<Commodity> getSerch(String commodityname,Integer pageNum) {
+        //开启分页功能
+        PageHelper.startPage(pageNum, 8);
+
+        List<Commodity> list = getPlanMapper.getSearch(commodityname);
+        //获取分页相关数据
+        PageInfo<Commodity> page = new PageInfo<Commodity>(list, 5);
+        return page;
     }
+
+
 }

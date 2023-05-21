@@ -39,7 +39,7 @@ public class AllBookController {
             return result;
         }
         //查询所有的图书信息
-        ArrayList<Book> planList = getPlanService.getAllBook();
+        ArrayList<Commodity> planList = getPlanService.getAllBook();
         result.put("data",planList);
         result.put("CODE","01");
         result.put("message","success");
@@ -51,14 +51,10 @@ public class AllBookController {
     public Map<String,Object> getPage(HttpServletRequest request){
         Map<String,Object> result = new HashMap<>();
         HttpSession session = request.getSession();
-        if (session.getAttribute("username") == null){
-            result.put("CODE","00");
-            result.put("message","用户登陆过期");
-            return result;
-        }
         String pageNum = request.getParameter("pageNum");
-        //获取员工分页信息
-        PageInfo<Book> page = getPlanService.getBookPage(Integer.parseInt(pageNum));
+        //获取商品分页信息
+        PageInfo<Commodity> page = getPlanService.getBookPage(Integer.parseInt(pageNum));
+        result.put("CODE","200");
         result.put("page",page);
         return result;
     }
@@ -114,12 +110,12 @@ public class AllBookController {
     public Map<String,Object> getserch(HttpServletRequest request){
         Map<String,Object> result = new HashMap<>();
         String commodityname = request.getParameter("commodityname");
-
+        String pageNum = request.getParameter("pageNum");
         try{
             //返回查询到的商品信息
             String name = '%'+commodityname+'%';
-            ArrayList<Commodity> commodities = getPlanService.getSerch(name);
-            result.put("commodities",commodities);
+            PageInfo<Commodity> page = getPlanService.getSerch(name,Integer.parseInt(pageNum));
+            result.put("commodities",page);
             result.put("CODE","200");
 
         }

@@ -11,7 +11,7 @@ public interface GetBookMapper {
      * 获取所有的图书
      * @return
      */
-    public ArrayList<Book> getBook();
+    public ArrayList<Commodity> getBook();
 
     /**
      * 根据图书id获取图书

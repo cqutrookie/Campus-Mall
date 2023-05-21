@@ -11,12 +11,12 @@ public interface GetBookService {
      * 获取计划列表
      * @return
      */
-    public ArrayList<Book> getAllBook();
+    public ArrayList<Commodity> getAllBook();
 
     /**
      * 获取计划分页信息
      */
-    public PageInfo<Book> getBookPage(Integer pageNum);
+    public PageInfo<Commodity> getBookPage(Integer pageNum);
 
     /**
      * 获取全部商品信息
@@ -26,6 +26,6 @@ public interface GetBookService {
     /**
      * 搜索框功能
      */
-    public ArrayList<Commodity> getSerch(String commodityname);
+    public PageInfo<Commodity> getSerch(String commodityname , Integer pageNum);
 }
 

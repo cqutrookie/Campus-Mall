@@ -3,7 +3,7 @@
 <mapper namespace="com.lxyup.SaveMoney.mapper.GetBookMapper">
     <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
     <select id="getBook" resultType="map">
-        select * from book
+        select * from commoditys
     </select>
 
     <select id="getBookById" resultType="com.lxyup.SaveMoney.pojo.Book">
