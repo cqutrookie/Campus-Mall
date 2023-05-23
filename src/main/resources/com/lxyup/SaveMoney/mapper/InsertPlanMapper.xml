@@ -9,5 +9,9 @@
     <select id="insertcart">
         INSERT into shoppingcart VALUES (null,#{subscriberid},#{commodityid},#{merchantid})
     </select>
+    
+    <select id="salecommodity">
+        INSERT into commoditys VALUES (null,#{commodityname},#{commoditydes},#{creattime},#{commodityprice},#{merchantid},#{img})
+    </select>
 
 </mapper>

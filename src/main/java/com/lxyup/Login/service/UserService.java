@@ -37,7 +37,7 @@ public interface UserService {
      * @param password
      * @return
      */
-     public String register(String name ,String username,String password);
+     public String register(String name ,String username,String password,String address);
 
 
     /**

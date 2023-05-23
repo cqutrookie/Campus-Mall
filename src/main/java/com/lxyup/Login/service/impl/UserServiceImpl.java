@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String register(String name,String username, String password) {
+    public String register(String name,String username, String password, String address) {
         String id = userLoginMapper.checkUsername(username);
         //如果id为空说明可以注册，否则返回‘00’表示该账号已经存在
         if (id != null){
@@ -49,6 +49,7 @@ public class UserServiceImpl implements UserService {
             user.setRegistertime(new Date());
             user.setUsername(username);
             user.setPassword(password);
+            user.setAddress(address);
             userLoginMapper.register(user);
             //返回01表示注册成功
             return "01";

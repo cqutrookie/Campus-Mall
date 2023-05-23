@@ -5,17 +5,22 @@ import com.lxyup.SaveMoney.pojo.Commodity;
 import com.lxyup.SaveMoney.pojo.ShoppingCart;
 import com.lxyup.SaveMoney.service.GetPlanByIdService;
 import com.lxyup.SaveMoney.service.PlanWork;
+import com.lxyup.SaveMoney.service.SaleCommodityService;
 import com.lxyup.SaveMoney.service.ShoppingcartService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.*;
 
 @Controller
 public class WorkPlanController {
@@ -23,6 +28,8 @@ public class WorkPlanController {
     private GetPlanByIdService getPlanByIdService;
     @Resource
     private ShoppingcartService shoppingcartService;
+    @Resource
+    private SaleCommodityService saleCommodityService;
     /**
      * 根据前端传来的planid返回对应的plan数据
      * @return
@@ -180,6 +187,29 @@ public class WorkPlanController {
         }
 
 
+        return result;
+    }
+
+    /**
+     * 用户发布商品接口
+     * @param request
+     * @return
+     */
+    @RequestMapping("/saleCommodity")
+    @ResponseBody
+    public Map<String,Object> saleCommodity(@RequestParam(value = "name") String name,
+                                  @RequestParam(value = "description") String description,
+                                  @RequestParam(value = "price") String price,
+                                  @RequestParam(value = "file") MultipartFile file,
+                                  HttpServletRequest request) {
+        Map<String, Object> result = new HashMap<>();
+        HttpSession httpSession = request.getSession();
+        // 处理前端发送的请求
+        String temp = String.valueOf(httpSession.getAttribute("userid"));
+        int userid = Integer.parseInt(temp);
+        int commodityPrice = Integer.parseInt(price);
+        String code = saleCommodityService.saleCommodity(file, name, description, commodityPrice,userid);
+        result.put("CODE", code);
         return result;
     }
 }

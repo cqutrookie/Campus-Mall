@@ -9,6 +9,15 @@ public class User {
     private int money;
     private Date registertime;
     private String name;
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String getId() {
         return id;
@@ -60,11 +69,11 @@ public class User {
         this.name = name;
     }
 
-    public User(String id, String username, String password,  int money, Date registertime, String name) {
+    public User(String id, String username, String password,  int money, Date registertime, String name, String address) {
         this.id = id;
         this.username = username;
         this.password = password;
-
+        this.address = address;
         this.money = money;
         this.registertime = registertime;
         this.name = name;

@@ -11,7 +11,7 @@
     </select>
 
     <insert id="register">
-        INSERT into sysusers VALUES (null, #{username},#{password},#{name},#{registertime},#{money})
+        INSERT into sysusers VALUES (null, #{username},#{password},#{name},#{registertime},#{money},#{address})
     </insert>
 
     <select id="getname" resultType="java.lang.String">

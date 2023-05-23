@@ -75,7 +75,8 @@ public class UserLoginController {
         String name = request.getParameter("name");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String CODE = userService.register(name,username,password);
+        String address = request.getParameter("address");
+        String CODE = userService.register(name,username,password,address);
         result.put("CODE",CODE);
         return result;
     }

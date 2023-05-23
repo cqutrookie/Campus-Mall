@@ -7,7 +7,7 @@ public class Commodity {
     private String commodityname;
     private String commoditydes;
     private int commodityprice;
-    private Date createtime;
+    private Date creattime;
     private int merchantid;
     private String img;
 
@@ -19,12 +19,12 @@ public class Commodity {
         this.img = img;
     }
 
-    public Commodity(int commodityid, String commodityname, String commoditydes, int commodityprice, Date createtime, int merchantid , String img) {
+    public Commodity(int commodityid, String commodityname, String commoditydes, int commodityprice, Date creattime, int merchantid , String img) {
         this.commodityid = commodityid;
         this.commodityname = commodityname;
         this.commoditydes = commoditydes;
         this.commodityprice = commodityprice;
-        this.createtime = createtime;
+        this.creattime = creattime;
         this.merchantid = merchantid;
         this.img = img;
     }
@@ -62,11 +62,11 @@ public class Commodity {
     }
 
     public Date getCreatetime() {
-        return createtime;
+        return creattime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreatetime(Date creattime) {
+        this.creattime = creattime;
     }
 
     public int getMerchantid() {
