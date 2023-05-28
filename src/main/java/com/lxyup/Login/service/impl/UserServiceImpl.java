@@ -61,4 +61,9 @@ public class UserServiceImpl implements UserService {
         String name = userLoginMapper.getname(username);
         return name;
     }
+
+    @Override
+    public int getPrice(int userid) {
+        return userLoginMapper.getmoney(userid);
+    }
 }

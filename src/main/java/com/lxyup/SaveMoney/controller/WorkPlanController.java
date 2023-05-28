@@ -3,11 +3,9 @@ package com.lxyup.SaveMoney.controller;
 import com.lxyup.SaveMoney.pojo.Book;
 import com.lxyup.SaveMoney.pojo.Commodity;
 import com.lxyup.SaveMoney.pojo.ShoppingCart;
-import com.lxyup.SaveMoney.service.GetPlanByIdService;
-import com.lxyup.SaveMoney.service.PlanWork;
-import com.lxyup.SaveMoney.service.SaleCommodityService;
-import com.lxyup.SaveMoney.service.ShoppingcartService;
+import com.lxyup.SaveMoney.service.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,6 +22,8 @@ import java.util.*;
 
 @Controller
 public class WorkPlanController {
+    @Resource
+    private BuyCommodityService buyCommodityService;
     @Resource
     private GetPlanByIdService getPlanByIdService;
     @Resource
@@ -212,4 +212,31 @@ public class WorkPlanController {
         result.put("CODE", code);
         return result;
     }
+
+
+    /**
+     * 购物车结算
+     * @param
+     * @param request
+     * @return
+     */
+    @RequestMapping("/settlementCart")
+    @ResponseBody
+    public Map<String,Object> settlementCart (HttpServletRequest request){
+        String commodityid = request.getParameter("commodityid");
+        String[] id = commodityid.split(",");
+        int [] ids = new int[id.length];
+        for (int i = 0; i<ids.length;i++){
+            ids[i] = Integer.parseInt(id[i]);
+        }
+        HttpSession httpSession = request.getSession();
+        String temp = String.valueOf(httpSession.getAttribute("userid"));
+        int userid = Integer.parseInt(temp);
+        String CODE = buyCommodityService.buyCommodity(ids,userid);
+        Map<String ,Object> result = new HashMap<>();
+        result.put("CODE",CODE);
+        return result;
+
+    }
+
 }

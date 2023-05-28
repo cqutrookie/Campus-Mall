@@ -46,4 +46,11 @@ public interface UserService {
      * @return
      */
      public String getname (String username);
+
+    /**
+     * 根据用户id获取用户金额
+     * @param userid
+     * @return
+     */
+     public int getPrice (int userid);
 }

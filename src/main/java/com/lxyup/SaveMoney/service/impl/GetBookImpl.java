@@ -28,6 +28,8 @@ public class GetBookImpl implements GetBookService {
         PageHelper.startPage(pageNum, 8);
 
         List<Commodity> list = getPlanMapper.getBook();
+        List<Commodity> commodityList = new ArrayList<>();
+
         //获取分页相关数据
         PageInfo<Commodity> page = new PageInfo<Commodity>(list, 5);
         return page;
@@ -45,6 +47,7 @@ public class GetBookImpl implements GetBookService {
         PageHelper.startPage(pageNum, 8);
 
         List<Commodity> list = getPlanMapper.getSearch(commodityname);
+
         //获取分页相关数据
         PageInfo<Commodity> page = new PageInfo<Commodity>(list, 5);
         return page;

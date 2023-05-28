@@ -11,7 +11,18 @@
     </select>
     
     <select id="salecommodity">
-        INSERT into commoditys VALUES (null,#{commodityname},#{commoditydes},#{creattime},#{commodityprice},#{merchantid},#{img})
+        INSERT into commoditys VALUES (null,#{commodityname},#{commoditydes},#{creattime},#{commodityprice},#{merchantid},#{img},0)
     </select>
 
+    <insert id="insertTransaction">
+        INSERT into transaction VALUES (null,#{commodityid},#{merchantid},#{subscriberid},#{creattime},0)
+    </insert>
+
+    <update id="updateCommodityStatus">
+        UPDATE commoditys s set s.status = 1 where s.commodityid = #{arg0}
+    </update>
+
+    <update id="updateUserMoney">
+        UPDATE sysusers s set s.money = s.money-#{arg1} where s.id = #{arg0}
+    </update>
 </mapper>

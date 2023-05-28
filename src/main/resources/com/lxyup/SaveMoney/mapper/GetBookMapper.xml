@@ -3,7 +3,7 @@
 <mapper namespace="com.lxyup.SaveMoney.mapper.GetBookMapper">
     <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
     <select id="getBook" resultType="map">
-        select * from commoditys
+        select * from commoditys where commoditys.status = 0
     </select>
 
     <select id="getBookById" resultType="com.lxyup.SaveMoney.pojo.Book">
@@ -15,7 +15,7 @@
     </select>
 
     <select id="getSearch" resultType="map">
-        select * from commoditys c where c.commodityname like #{arg0}
+        select * from commoditys c where c.commodityname like #{arg0} and c.status = 0
     </select>
 
     <select id="getCommoditiesId" resultType="java.lang.Integer">

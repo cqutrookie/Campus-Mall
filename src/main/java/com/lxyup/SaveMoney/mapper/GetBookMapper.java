@@ -47,4 +47,5 @@ public interface GetBookMapper {
      */
     public Commodity getCommodityById(int commodityid);
 
+
 }
