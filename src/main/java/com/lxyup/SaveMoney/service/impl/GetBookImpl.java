@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.lxyup.SaveMoney.mapper.GetBookMapper;
 import com.lxyup.SaveMoney.pojo.Book;
 import com.lxyup.SaveMoney.pojo.Commodity;
+import com.lxyup.SaveMoney.pojo.Transaction;
 import com.lxyup.SaveMoney.service.GetBookService;
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,21 @@ public class GetBookImpl implements GetBookService {
         //获取分页相关数据
         PageInfo<Commodity> page = new PageInfo<Commodity>(list, 5);
         return page;
+    }
+
+    @Override
+    public ArrayList<Commodity> getOrder(int userid) {
+        ArrayList<Commodity> commodities = new ArrayList<>();
+        ArrayList<Transaction> transactions = new ArrayList<>();
+        transactions = getPlanMapper.getOrder(userid);
+        for (int i = 0 ; i<transactions.size();i++){
+            int commodityid = transactions.get(i).getCommodityid();
+            Commodity commodity = getPlanMapper.getCommodityById(commodityid);
+            commodity.setStatus(transactions.get(i).getStatus());
+            commodities.add(commodity);
+        }
+
+        return commodities;
     }
 
 

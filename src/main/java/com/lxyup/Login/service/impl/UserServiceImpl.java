@@ -66,4 +66,15 @@ public class UserServiceImpl implements UserService {
     public int getPrice(int userid) {
         return userLoginMapper.getmoney(userid);
     }
+
+    @Override
+    public String changePassword(int userid , String newPassword) {
+        try{
+            userLoginMapper.changePassword(userid,newPassword);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return "200";
+    }
 }

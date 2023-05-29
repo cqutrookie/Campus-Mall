@@ -14,4 +14,6 @@ public interface UserLoginMapper {
     public String getname(String username);
 
     public int getmoney(int userid);
+
+    public void changePassword(int userid,String password);
 }

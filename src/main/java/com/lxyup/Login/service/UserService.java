@@ -53,4 +53,12 @@ public interface UserService {
      * @return
      */
      public int getPrice (int userid);
+
+    /**
+     * 修改密码
+     * @param userid
+     * @param newPassword
+     * @return
+     */
+     public String changePassword (int userid , String newPassword);
 }

@@ -20,4 +20,8 @@ public interface InsertPlanMapper {
     public void updateCommodityStatus(int id);
 
     public void updateUserMoney(int id,int delmoney);
+
+    public void confirmCom(int userid , int commodityid);
+
+    public void addMerchantMoney(int userid , int price);
 }

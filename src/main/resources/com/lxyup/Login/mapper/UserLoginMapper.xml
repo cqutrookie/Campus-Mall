@@ -22,5 +22,8 @@
         select t.money from sysusers t where t.id = #{arg0}
     </select>
 
+    <update id="changePassword">
+        UPDATE  sysusers s SET s.password = #{arg1}  WHERE s.id = #{arg0}
+    </update>
 
 </mapper>

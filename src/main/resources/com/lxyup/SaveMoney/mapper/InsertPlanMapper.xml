@@ -25,4 +25,12 @@
     <update id="updateUserMoney">
         UPDATE sysusers s set s.money = s.money-#{arg1} where s.id = #{arg0}
     </update>
+
+    <update id="confirmCom">
+        UPDATE transaction s set s.status = 2 where s.subscriberid = #{arg0} and s.commodityid = #{arg1}
+    </update>
+
+    <update id="addMerchantMoney">
+        UPDATE sysusers s set s.money = s.money + #{arg1} where s.id = #{arg0}
+    </update>
 </mapper>

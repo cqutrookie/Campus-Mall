@@ -81,4 +81,23 @@ public class UserLoginController {
         return result;
     }
 
+
+    /**
+     * 修改密码
+     * @param request
+     * @return
+     */
+    @RequestMapping("/changePassword")
+    @ResponseBody
+    public Map<String,Object> changePassword(HttpServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String newPassword = request.getParameter("newPassword");
+        HttpSession httpSession = request.getSession();
+        String id = String.valueOf(httpSession.getAttribute("userid"));
+        int userid = Integer.parseInt(id);
+        String CODE  = userService.changePassword(userid,newPassword);
+        result.put("CODE",CODE);
+        return result;
+    }
+
 }

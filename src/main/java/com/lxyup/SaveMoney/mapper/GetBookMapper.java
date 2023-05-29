@@ -3,6 +3,7 @@ package com.lxyup.SaveMoney.mapper;
 import com.lxyup.SaveMoney.pojo.Book;
 import com.lxyup.SaveMoney.pojo.Commodity;
 import com.lxyup.SaveMoney.pojo.ShoppingCart;
+import com.lxyup.SaveMoney.pojo.Transaction;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,11 @@ public interface GetBookMapper {
      * 根据商品id查询商品信息
      */
     public Commodity getCommodityById(int commodityid);
+
+    /**
+     * 获取用户的订单
+     */
+    public ArrayList<Transaction> getOrder(int userid);
 
 
 }

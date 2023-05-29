@@ -29,4 +29,8 @@
     <select id="getCommodityById" resultType="com.lxyup.SaveMoney.pojo.Commodity">
         select * from commoditys c where c.commodityid = #{arg0}
     </select>
+
+    <select id="getOrder" resultType="com.lxyup.SaveMoney.pojo.Transaction">
+        select * from transaction s where s.subscriberid = #{arg0}
+    </select>
 </mapper>

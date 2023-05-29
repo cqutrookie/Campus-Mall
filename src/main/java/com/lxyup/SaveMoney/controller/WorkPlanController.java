@@ -223,6 +223,7 @@ public class WorkPlanController {
     @RequestMapping("/settlementCart")
     @ResponseBody
     public Map<String,Object> settlementCart (HttpServletRequest request){
+        Map<String ,Object> result = new HashMap<>();
         String commodityid = request.getParameter("commodityid");
         String[] id = commodityid.split(",");
         int [] ids = new int[id.length];
@@ -232,9 +233,38 @@ public class WorkPlanController {
         HttpSession httpSession = request.getSession();
         String temp = String.valueOf(httpSession.getAttribute("userid"));
         int userid = Integer.parseInt(temp);
-        String CODE = buyCommodityService.buyCommodity(ids,userid);
+        result = buyCommodityService.buyCommodity(ids,userid);
+        return result;
+
+    }
+
+    /**
+     * 确认收货逻辑
+     * @param request
+     * @return
+     */
+    @RequestMapping("/confirmCommodity")
+    @ResponseBody
+    public Map<String,Object> confirmCommodity (HttpServletRequest request){
         Map<String ,Object> result = new HashMap<>();
-        result.put("CODE",CODE);
+       try{
+           String commodityidtmp = request.getParameter("commodityid");
+           int commodityid = Integer.parseInt(commodityidtmp);
+           HttpSession httpSession = request.getSession();
+           String temp = String.valueOf(httpSession.getAttribute("userid"));
+
+           int userid = Integer.parseInt(temp);
+
+           String merchantidtmp = request.getParameter("merchantid");
+
+           int merchantid = Integer.parseInt(merchantidtmp);
+           String CODE = buyCommodityService.confirmCom(userid,commodityid,merchantid);
+           result.put("CODE",CODE);
+       }
+       catch (Exception e){
+           result.put("CODE","201");
+       }
+
         return result;
 
     }

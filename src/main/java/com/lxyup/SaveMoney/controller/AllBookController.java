@@ -2,6 +2,7 @@ package com.lxyup.SaveMoney.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.lxyup.Login.pojo.User;
+import com.lxyup.Login.service.UserService;
 import com.lxyup.SaveMoney.pojo.Book;
 import com.lxyup.SaveMoney.pojo.Commodity;
 import com.lxyup.SaveMoney.service.GetBookService;
@@ -24,6 +25,8 @@ import java.util.Map;
 @Controller
 public class AllBookController {
 
+    @Resource
+    private UserService userService;
     @Resource
     private GetUserService getUserService;
     @Resource
@@ -129,6 +132,27 @@ public class AllBookController {
         return result;
     }
 
+
+    /**
+     * 获取用户订单
+     * @param request
+     * @return
+     */
+    @RequestMapping("/getOrder")
+    @ResponseBody
+    public Map<String,Object> getOrder(HttpServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        HttpSession httpSession = request.getSession();
+
+        String id = String.valueOf(httpSession.getAttribute("userid"));
+        int userid = Integer.parseInt(id);
+        ArrayList<Commodity> commodities = getPlanService.getOrder(userid);
+        int money = userService.getPrice(userid);
+        result.put("commodities",commodities);
+        result.put("money",money);
+        result.put("CODE","200");
+        return result;
+    }
 
 }
 
