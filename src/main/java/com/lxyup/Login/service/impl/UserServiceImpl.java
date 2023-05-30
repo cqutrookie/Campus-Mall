@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
             user.setUsername(username);
             user.setPassword(password);
             user.setAddress(address);
+            user.setStatus(0);
             userLoginMapper.register(user);
             //返回01表示注册成功
             return "01";

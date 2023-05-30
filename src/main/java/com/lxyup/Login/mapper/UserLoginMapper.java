@@ -16,4 +16,12 @@ public interface UserLoginMapper {
     public int getmoney(int userid);
 
     public void changePassword(int userid,String password);
+
+    public User adminCheckUsermessage(int username);
+
+    public void adminProhibitUser(int userid);
+
+    public void adminReleaseUser(int userid);
+
+    public String adminChechUserAddress(int userid);
 }

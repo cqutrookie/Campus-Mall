@@ -10,7 +10,7 @@
         select * from book b where b.bookid = #{bookid}
     </select>
 
-    <select id="getAllCommodity" resultType="map">
+    <select id="getAllCommodity" resultType="com.lxyup.SaveMoney.pojo.Commodity">
         select * from commoditys
     </select>
 
@@ -33,4 +33,34 @@
     <select id="getOrder" resultType="com.lxyup.SaveMoney.pojo.Transaction">
         select * from transaction s where s.subscriberid = #{arg0}
     </select>
+
+    <select id="adminCheckUserCommodity" resultType="com.lxyup.SaveMoney.pojo.Commodity">
+        select * from commoditys c where c.merchantid = #{arg0}
+    </select>
+    <select id="adminGetAllUsers" resultType="com.lxyup.Login.pojo.User">
+        select * from sysusers
+    </select>
+    <update id="adminDeleteCommodity">
+        update commoditys s set s.status = 2 where s.commodityid = #{arg0}
+    </update>
+
+    <update id="adminGroundingCommodity">
+        update commoditys s set s.status = 0 where s.commodityid = #{arg0}
+    </update>
+
+    <select id="adminCheckTransaction" resultType="com.lxyup.SaveMoney.pojo.Transaction">
+        select * from transaction
+    </select>
+
+    <select id="adminCheckTransactionByid" resultType="com.lxyup.SaveMoney.pojo.Transaction">
+        select * from transaction s where s.transactionid = #{arg0}
+    </select>
+
+    <update id="adminSendTransaction" >
+        update transaction s set s.status = 1 where s.transactionid = #{arg0}
+    </update>
+
+    <update id="recharge">
+        update sysusers s set s.money = s.money + #{arg1} where s.username = #{arg0}
+    </update>
 </mapper>

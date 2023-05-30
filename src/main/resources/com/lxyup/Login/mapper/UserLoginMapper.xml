@@ -3,7 +3,7 @@
 <mapper namespace="com.lxyup.Login.mapper.UserLoginMapper" >
     <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
     <select id="checkUser" resultType="java.lang.String">
-        select t.id from sysusers t where t.username = #{arg0} and t.password = #{arg1}
+        select t.id from sysusers t where t.username = #{arg0} and t.password = #{arg1} and t.status = 0
     </select>
 
     <select id="checkUsername" resultType="java.lang.String">
@@ -11,7 +11,7 @@
     </select>
 
     <insert id="register">
-        INSERT into sysusers VALUES (null, #{username},#{password},#{name},#{registertime},#{money},#{address})
+        INSERT into sysusers VALUES (null, #{username},#{password},#{name},#{registertime},#{money},#{address},#{status})
     </insert>
 
     <select id="getname" resultType="java.lang.String">
@@ -26,4 +26,19 @@
         UPDATE  sysusers s SET s.password = #{arg1}  WHERE s.id = #{arg0}
     </update>
 
+    <select id="adminCheckUsermessage" resultType="com.lxyup.Login.pojo.User">
+        select * from sysusers s where s.username = #{arg0}
+    </select>
+
+    <update id="adminProhibitUser">
+        UPDATE sysusers s set s.status = 1 where s.id = #{arg0}
+    </update>
+
+    <update id="adminReleaseUser">
+        UPDATE sysusers s set s.status = 0 where s.id = #{arg0}
+    </update>
+
+    <select id="adminChechUserAddress" resultType="java.lang.String">
+        select s.address from sysusers s where s.id = #{arg0}
+    </select>
 </mapper>

@@ -30,6 +30,8 @@ public class WorkPlanController {
     private ShoppingcartService shoppingcartService;
     @Resource
     private SaleCommodityService saleCommodityService;
+    @Resource
+    private AdminService adminService;
     /**
      * 根据前端传来的planid返回对应的plan数据
      * @return
@@ -269,4 +271,26 @@ public class WorkPlanController {
 
     }
 
+
+    /**
+     * 管理端口
+     * @param request
+     * @return
+     */
+    @RequestMapping("/admin")
+    @ResponseBody
+    public Map<String,Object> admin (HttpServletRequest request){
+        Map<String ,Object> result = new HashMap<>();
+        try{
+            String inputstr = request.getParameter("inputstr");
+            result = adminService.backMessage(inputstr);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            result.put("CODE","202");
+        }
+
+        return result;
+
+    }
 }

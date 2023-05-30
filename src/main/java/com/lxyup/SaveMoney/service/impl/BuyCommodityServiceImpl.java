@@ -50,8 +50,13 @@ public class BuyCommodityServiceImpl implements BuyCommodityService {
                 //获取商品信息
                 Commodity commodity = getBookMapper.getCommodityById(ids[i]);
                 //商品被用户已经买了
-                if (commodity.getStatus()!=0){
+                if (commodity.getStatus()==1){
                     map.put("CODE","202");
+                    map.put("commodityname",commodity.getCommodityname());
+                    return map;
+                }
+                if (commodity.getStatus()==2){
+                    map.put("CODE","204");
                     map.put("commodityname",commodity.getCommodityname());
                     return map;
                 }
